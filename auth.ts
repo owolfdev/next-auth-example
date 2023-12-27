@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 
+// import Notion from "next-auth/providers/notion"; //https://authjs.dev/reference/core/providers/notion
 // import Apple from "next-auth/providers/apple"
 // import Atlassian from "next-auth/providers/atlassian"
 // import Auth0 from "next-auth/providers/auth0"
@@ -70,6 +71,10 @@ export const config = {
     logo: "https://next-auth.js.org/img/logo/logo-sm.png",
   },
   providers: [
+    // Notion({
+    //   clientId: process.env.NOTION_CLIENT_ID,
+    //   clientSecret: process.env.NOTION_CLIENT_SECRET,
+    // }),
     // Apple,
     // Atlassian,
     // Auth0,
