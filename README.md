@@ -26,7 +26,7 @@ The deployed version of the original example can be found at [`next-auth-example
 
 [https://next-auth-example-weld.vercel.app/](https://next-auth-example-weld.vercel.app/)
 
-This example features four different methods of implementing Next Auth authentication in a Next.js application.
+## This example features four different methods of implementing Next Auth authentication in a Next.js application.
 
 ### A. Server-Side Configurations
 
