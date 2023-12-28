@@ -1,4 +1,4 @@
-this is a slightly modified version of the original NextAuth.js example repo.
+this is a slightly modified version of the original **[NextAuth.js example repo](https://github.com/nextauthjs/next-auth-example.git)**.
 
 > The example repository is maintained from a [monorepo](https://github.com/nextauthjs/next-auth/tree/main/apps/examples/nextjs). Pull Requests should be opened against [`nextauthjs/next-auth`](https://github.com/nextauthjs/next-auth).
 
