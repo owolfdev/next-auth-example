@@ -8,6 +8,21 @@ export default function Test() {
         this page is protected by middleware as defined by the auth.ts callbacks
         configuration code.
       </p>
+      <div>
+        <pre>{`callbacks: {
+    authorized({ request, auth }) {
+      const protectedPaths = ["/middleware-example", "/middleware-example2"];
+      const { pathname } = request.nextUrl;
+      // Check if the pathname is in the list of protected paths
+      if (protectedPaths.includes(pathname)) {
+        // Return true if authenticated (auth object exists), false otherwise
+        return !!auth;
+      }
+      // Default to true for all other paths
+      return true;
+    },
+  },`}</pre>
+      </div>
       <p>
         This page is protected by using the universal{" "}
         <CustomLink href="https://nextjs.authjs.dev#auth">
