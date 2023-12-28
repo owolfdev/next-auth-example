@@ -1,52 +1,68 @@
+An example of how to use [NextAuth.js](https://next-auth.js.org) to add authentication to a Next.js app.
+
 this is a slightly modified version of the original **[NextAuth.js example repo](https://github.com/nextauthjs/next-auth-example.git)**.
-
-> The example repository is maintained from a [monorepo](https://github.com/nextauthjs/next-auth/tree/main/apps/examples/nextjs). Pull Requests should be opened against [`nextauthjs/next-auth`](https://github.com/nextauthjs/next-auth).
-
-<p align="center">
-   <br/>
-   <a href="https://authjs.dev" target="_blank"><img width="150px" src="https://authjs.dev/img/logo/logo-sm.png" /></a>
-   <h3 align="center">NextAuth.js Example App</h3>
-   <p align="center">
-   Open Source. Full Stack. Own Your Data.
-   </p>
-   <p align="center" style="align: center;">
-      <a href="https://npm.im/next-auth">
-        <img alt="npm" src="https://img.shields.io/npm/v/next-auth?color=green&label=next-auth">
-      </a>
-      <a href="https://bundlephobia.com/result?p=next-auth-example">
-        <img src="https://img.shields.io/bundlephobia/minzip/next-auth?label=next-auth" alt="Bundle Size"/>
-      </a>
-      <a href="https://www.npmtrends.com/next-auth">
-        <img src="https://img.shields.io/npm/dm/next-auth?label=next-auth%20downloads" alt="Downloads" />
-      </a>
-      <a href="https://npm.im/next-auth">
-        <img src="https://img.shields.io/badge/npm-TypeScript-blue" alt="TypeScript" />
-      </a>
-   </p>
-</p>
-
-## Overview
-
-NextAuth.js is a complete open source authentication solution.
-
-This is an example application that shows how `next-auth` is applied to a basic Next.js app.
-
-The deployed version can be found at [`next-auth-example.vercel.app`](https://next-auth-example.vercel.app)
 
 ### About NextAuth.js
 
-NextAuth.js is an easy to implement, full-stack (client/server) open source authentication library originally designed for [Next.js](https://nextjs.org) and [Serverless](https://vercel.com). Our goal is to [support even more frameworks](https://github.com/nextauthjs/next-auth/issues/2294) in the future.
+NextAuth.js is a complete open source authentication solution. NextAuth.js is an easy to implement, full-stack (client/server) open source authentication library originally designed for [Next.js](https://nextjs.org) and [Serverless](https://vercel.com).
 
 Go to [next-auth.js.org](https://authjs.dev) for more information and documentation.
 
-> _NextAuth.js is not officially associated with Vercel or Next.js._
+## Project Overview
+
+This is an example application that shows how `next-auth` is applied to a basic Next.js app.
+
+The deployed version of the original example can be found at [`next-auth-example.vercel.app`](https://next-auth-example.vercel.app)
+
+## Our Custom Example:
+
+**Note:** This example is a fork of the official **[NextAuth.js example repository](https://github.com/nextauthjs/next-auth-example.git)**.
+
+### Code:
+
+[https://github.com/owolfdev/next-auth-example](https://github.com/owolfdev/next-auth-example)
+
+### Deployment:
+
+[https://next-auth-example-weld.vercel.app/](https://next-auth-example-weld.vercel.app/)
+
+This example features four different methods of implementing Next Auth authentication in a Next.js application.
+
+### A. Server-Side Configurations
+
+#### 1. React Server Component Usage
+
+This example demonstrates using NextAuth.js in a React Server Component. The `auth()` method is called server-side to obtain session information. This method is useful for server-rendered pages where you need to know the user's authentication status before rendering the page.
+
+#### 2. Route Handler Usage
+
+This example shows how to protect API routes using NextAuth.js. The `auth()` method is used within an API route (a Route Handler) to ensure that only authenticated requests can access certain data. The client-side code fetches data from this protected API route.
+
+#### 3. Middleware Usage
+
+This method involves using Next.js Middleware to protect certain routes based on authentication status. The `authorized` callback in the `auth.ts` configuration checks if the user is authenticated and determines access to protected paths.
+
+### B. Client-Side Configuration
+
+#### Client Side Rendering Usage
+
+This example uses the `useSession` React Hook from NextAuth.js to manage session state on the client side. This approach is common for pages that render primarily on the client side. It involves checking the user's session and dynamically rendering content based on the authentication status. The `UpdateForm` component in this example allows for updating session information, demonstrating how to interact with the session state on the client side.
+
+### Key Concepts and Takeaways
+
+- **Server vs Client Authentication**: Understanding when to use server-side or client-side authentication is crucial. Server-side methods are typically used for pages that need to be secure and rendered based on the user's session, whereas client-side methods are used for dynamic user interfaces that adapt to the session state.
+- **Protected Routes and API**: Both server-side and client-side configurations show how to protect routes and API endpoints using NextAuth.js.
+- **Session Management**: The examples demonstrate how to retrieve and manage session information, a key aspect of handling authentication in web applications.
+- **Middleware in Next.js**: The middleware example highlights the powerful feature of Next.js that allows intercepting requests and implementing logic such as authentication checks before the request is processed further.
+
+These examples are a great way to get acquainted with various authentication patterns in Next.js using NextAuth.js. Remember, the choice of method depends on the specific needs of your application, such as the level of security required, the type of content being served, and the user experience you want to provide.
 
 ## Getting Started
 
 ### 1. Clone the repository and install dependencies
 
-```
-git clone https://github.com/nextauthjs/next-auth-example.git
+```bash
+git clone https://github.com/owolfdev/next-auth-example.git
 cd next-auth-example
 npm install
 ```
@@ -55,7 +71,7 @@ npm install
 
 Copy the .env.local.example file in this directory to .env.local (which will be ignored by Git):
 
-```
+```bash
 cp .env.local.example .env.local
 ```
 
@@ -87,13 +103,13 @@ A list of configured providers and their callback URLs is available from the end
 
 To run your site locally, use:
 
-```
+```bash
 npm run dev
 ```
 
 To run it in production mode, use:
 
-```
+```bash
 npm run build
 npm run start
 ```
@@ -104,13 +120,6 @@ Follow the [Deployment documentation](https://authjs.dev/getting-started/deploym
 
 ## Acknowledgements
 
-<a href="https://vercel.com?utm_source=nextauthjs&utm_campaign=oss">
-<img width="170px" src="https://raw.githubusercontent.com/nextauthjs/next-auth/main/docs/static/img/powered-by-vercel.svg" alt="Powered By Vercel" />
-</a>
-<p align="left">Thanks to Vercel sponsoring this project by allowing it to be deployed for free for the entire NextAuth.js Team</p>
-
 ## License
 
 ISC
-
----
