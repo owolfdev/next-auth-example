@@ -120,6 +120,8 @@ Follow the [Deployment documentation](https://authjs.dev/getting-started/deploym
 
 ## Acknowledgements
 
+this is a slightly modified version of the original **[NextAuth.js example repo](https://github.com/nextauthjs/next-auth-example.git)**.
+
 ## License
 
 ISC
