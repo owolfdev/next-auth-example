@@ -140,8 +140,16 @@ export const config = {
   ],
   callbacks: {
     authorized({ request, auth }) {
+      const protectedPaths = ["/middleware-example", "/middleware-example2"];
       const { pathname } = request.nextUrl;
-      if (pathname === "/middleware-example") return !!auth;
+
+      // Check if the pathname is in the list of protected paths
+      if (protectedPaths.includes(pathname)) {
+        // Return true if authenticated (auth object exists), false otherwise
+        return !!auth;
+      }
+
+      // Default to true for all other paths
       return true;
     },
   },
