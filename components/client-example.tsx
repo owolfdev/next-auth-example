@@ -46,6 +46,7 @@ export default function ClientExample() {
   return (
     <div className="space-y-2">
       <h1 className="text-3xl font-bold">Client Side Rendering Usage</h1>
+      <div>@/components/client-example.tsx</div>
       <p>
         This page fetches session data client side using the{" "}
         <CustomLink href="https://nextjs.authjs.dev/react#usesession">

@@ -4,6 +4,7 @@ export default function Test() {
   return (
     <div className="space-y-2">
       <h1 className="text-3xl font-bold">Middleware usage</h1>
+      <div>/app/middleware-example/page.tsx</div>
       <p className="font-bold">
         this page is protected by middleware as defined by the auth.ts callbacks
         configuration code.

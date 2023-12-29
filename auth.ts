@@ -140,7 +140,7 @@ export const config = {
   ],
   callbacks: {
     authorized({ request, auth }) {
-      const protectedPaths = ["/middleware-example", "/middleware-example2"];
+      const protectedPaths = ["/middleware-example"];
       const { pathname } = request.nextUrl;
 
       // Check if the pathname is in the list of protected paths

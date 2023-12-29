@@ -14,6 +14,7 @@ export default function Page() {
   return (
     <div className="space-y-2">
       <h1 className="text-3xl font-bold">Route Handler Usage</h1>
+      <div>/app/api-example/page.tsx</div>
       <p>
         This page fetches data from an API{" "}
         <CustomLink href="https://nextjs.org/docs/app/building-your-application/routing/route-handlers">
@@ -25,6 +26,7 @@ export default function Page() {
         </CustomLink>{" "}
         method.
       </p>
+
       <div className="font mono flex flex-col gap-2">
         <hr />
         <div className="font-bold">api request:</div>
